@@ -1,0 +1,78 @@
+Versiyon Kontrolü :Git ve Github
+
+ *Git Nedir?
+Versiyon kontrol sistemidir.Bir yazılım geliştirirken checkpoint gereken noktalarda bize kolaylık sağlar.Linux' u bulan kişi tarafından geliştirilmiştir.Tamamen açık kaynaklı ve ücretsizdir.Git şu anda bir endüstri standartıdır.
+ *Github Nedir?
+Git repolarını saklayabildiğimiz,paylaşabildiğimiz bir portaldır.
+ 
+ *Terminal Kullanımı Komutları
+ls:hangi klasörde bulunuyorsan oradaki klasorleri ve içeriklerini gösterir.
+pwd:hangi dizinin içinde olduğunu gösterir.Güncel olarak bulunduğun directory gösterilir.(print working directory)
+cd ve dosya ismini yazarsan o dizine gidebilirsin.(change directory:cd)
+cd .. bir önceki klasöre geri gider.
+clear:ekranı temizler.
+mkdir:(make directory)klasör oluşturur.
+touch:dosya oluşturmak için kullanılan komut.
+rm:(remove)d sadece dosya kaldırmak için kullanılan komut.
+rm - rf:klasörü kaldırabilirsin.
+git:yardım dokümantasyanu karşımıza çıkar.
+--Kullanıcı adını git config --global user.name "şevval" olarak sisteme kaydedilebilir.ve bu adı görmek için git config user.name komutu kullanılır. 
+--Kullanıcı e maili için git config  --global user.email "emailadresi@gmail.com" olarak kaydedilebilir.
+
+ *Yaptığımız kaydetme işlemlerini Git'te commit diye adlandırırız.Git'te büyük bir projeyi yaparken farklı fonksiyonları bir arada aynı projede yapmaya imkan sağlanır.Branch(dal) burada kullanıcıya çalıştırdığı projenin farklı versiyonlarına ulaşmasını sağlar.Ve bu branchte yapılan değişiklikleri birleştirebiliriz.
+
+  Git init ve status kavramları
+ git status kavramı:güncel git durumunum gösterir.
+ git init:mevcut dizini  Git deposu olarak başlatmak için kullanılabilir.
+ 
+git add:Git'e dosyayı ekliyor.
+
+git commit -m: Git deposundaki değişiklikleri onaylamak veya kaydetmek için kullanılır. -m de yazmak istediğin mesajı gösterir. git log:commit yaptığımız işlemin özet bilgisini görmek için kullanılır.
+
+git add ya da git commit -a yaparsan değişikliklerle git e ekliyor.
+
+git add . :her şeyi ekliyor
+
+git ignore:Git'in görmezden geleceği dosyaları oluşturup,bunun içerisine en baştan hangi dosyaların görmeyeceğemizi belirtebiliriz.
+
+HEAD->master:head Git içerisinde hangi konumda olduğunu gösterir.hem master branchinin içinde olduğunu gösteriyor.hem konum hem branchi gösteriyor.
+
+git branch ile yeni branch oluşturulur.
+
+git switch master:master a geri döner.
+
+git merge ile yaptığım commitleri birleştiriyorsun.
+
+!!fast forward da master branch te değişiklik yapmadan feature da yaptığın değişikliği master ile merge etmiş oluyorsun.
+
+!!Merge  Conflict:mesela head de olan bir dosyayı başka bir branchte modifiye edip aynı zamanda master branchte silersen merge conflicte sebep olursun ve bu iki branchi merge edemezsin.Bundan sonra karar verip hangi dosyanın değişikliğine devam edeceğini belirleyip add ve commit kullanark düzeltmelisin.Birden fazla şekli olabilir.Önemli olan çelişkiyi engellemek.
+
+Commit yapmadan master a geri dönmek gerekirse bu değişiklikler ne durumda olur? Commit etmediğin dosyayı switch yaptığın master a ekler fakat geçici olarak.Aktif branchlere eklemeden dosyayı korumuş oluyorsun.Diğer branchte yaptığın değişikliği kaydetmek için sana seçenekler sunar.
+1-değişiklikleri kaydetmemek
+2-git restore ile bir önceki commite döner.
+3-stashte (ne çalışmada ne de lokale atmak istemiyorsan bunu kullanırsın.saklıyorsun bir nevi)
+
+git stash pop: o bilgiyi geri gönderiyor.
+git stash list:sakladıklarının listelerini görürsün.
+git stash apply da hem listede kalır hem de o branchte uygulamış olursun.
+git checkout:bir önceki komuta gelmek için hash i yazıyorsun yanına.
+(head kopuk durumda gözüküyor diye uyarı veriyor aslında branch ile head in aynı yerde olmadığını söylüyor.)
+git reset: belli komutları silmek için kullanabilirsin.commit hashin, yazıyorsun ondan sonra yapılan commitleri siliyor.
+git reset --hard hashname: burada zorlayarak commiti siliyo ve içeriklerini siliyor.(bunu kullanırken dikkatli olmak gerekir)
+git revert:  silmeden commitleri ayrı bir branchmiş gibi atlayarak yeni commit elde etmek istersek bunu kullanırız.(commiti geri almak istediğinin hashini almak için)logda duruyor yani history kalıyor ama ileriki commitlere atlamış gibi düşünüyorum.
+git diff :branhler,commitler arasındaki farklılıkları gösterir.(difference)tek başına kullanırsan güncel yaptığın değişiklikleri gösterir dosyadaki.
+git diff HEAD:son commite göre neleri değiştirdiğimizi görmüş oluruz.
+git diff commitname1 commitname2:ikisi ararsındaki değişikilikleri gösterir.
+ 
+Rebasing Nedir?
+  Master a gelen commitleri ve feature ile birleşmiş mergeleri base branch değişikliklerine dayandırılması ile ifade edilebilir.
+git rebase master:featin commilerini önce masterlar sonra featlar olacak şekilde base de dizer.
+
+*Gitlab'de Github gibi bir platformdur.
+*Star like gibi düşünülebilir.Hızlı erişim kolaylığı sağlar.
+*Issues ile repo sahibiyle iletişime geçilebilir.
+
+
+
+
+
