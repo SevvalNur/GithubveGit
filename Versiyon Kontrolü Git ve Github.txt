@@ -75,4 +75,3 @@ git rebase master:featin commilerini önce masterlar sonra featlar olacak şekil
 
 
 
-
